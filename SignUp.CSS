@@ -1,0 +1,225 @@
+/* Importing the 'Poppins' font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display');
+
+/* Global style settings */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Styling for the body */
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* Styling for the wrapper */
+.wrapper {
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    padding: 25px 30px;
+    margin: auto;
+    flex: 1;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the title inside the wrapper */
+.wrapper .title {
+    font-size: 40px;
+    font-weight: 500;
+    position: relative;
+}
+
+/* Decorative underline for the title */
+.wrapper .title::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    width: 150px;
+    background: linear-gradient(135deg, #025889, #bad4f1);
+}
+
+/* Styling for user details section in the form */
+.wrapper form .user-det {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Styling for input boxes in user details */
+form .user-det .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+/* Styling for labels (details) in input boxes */
+.user-det .input-box .det {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Styling for input fields */
+.user-det .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Style for focused input fields */
+.user-det .input-box input:focus,
+.user-det .input-box input:valid {
+    border-color: #025889;
+}
+
+/* Styling for gender details */
+form .gender-det .gender-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Styling for gender category section */
+form .gender-det .category {
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+/* Styling for gender labels and radio buttons */
+.gender-det .category label {
+    display: flex;
+    align-items: center;
+}
+
+.gender-det .category .dot {
+    height: 18px;
+    width: 18px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Styling for checked radio buttons */
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two {
+    border-color: #d9d9d9;
+    background: #90bbe9;
+}
+
+/* Hiding the default radio buttons */
+form input[type="radio"] {
+    display: none;
+}
+
+/* Styling for the submit button */
+.btn2 {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid #fefefe;
+    text-transform: uppercase;
+    color: #fefefe;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.btn2::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - -2px);
+    background-color: #212121;
+    transition: 0.3s ease-out;
+    transform: scaleY(1);
+}
+
+.btn2::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - 50px);
+    background-color: #212121;
+    transition: 0.3s ease-out;
+    transform: scaleY(1);
+}
+
+.btn2:hover::before {
+    transform: translateY(-25px);
+    height: 0;
+}
+
+.btn2:hover::after {
+    transform: scaleX(0);
+    transition-delay: 0.15s;
+}
+
+.btn2:hover {
+    border: 2px solid #fefefe;
+}
+
+.btn2 span {
+    position: relative;
+    z-index: 3;
+}
+
+button {
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+}
+
+/* Media query for responsive design */
+@media (max-width: 584px) {
+    .wrapper {
+        max-width: 100%;
+    }
+    form .user-det .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    form .gender-det .category {
+        display: flex;
+        width: 10%;
+    }
+    .wrapper form .user-det {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .user-det::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+.error {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+/* Style to highlight input fields with errors */
+.input-box.error input {
+    border-color: red;
+}

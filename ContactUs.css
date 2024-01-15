@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactus {
+    position: relative;
+    width: 100%;
+    padding: 40px 100px;
+}
+
+.contactus .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.contactus .title h2 {
+    color: #666;
+    font-weight: 500;
+}
+
+.from {
+    grid-area: from;
+}
+.info {
+    grid-area: info;
+}
+.map {
+    grid-area: map;
+}
+
+.contact {
+    padding: 40px;
+    background: #fff;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.15);
+}
+
+.box {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+        "from info"
+        "from map";
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+
+.contact h3 {
+    color: #002338;
+    font-weight: 500;
+    font-size: 1.4em;
+}
+
+.formBox {
+    position: relative;
+    width: 100%;
+}
+
+.formBox .row50 {
+    display: flex;
+    gap: 20px;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+.formBox .row100 .inputBox {
+    width: 100%;
+}
+
+.inputBox span, .infobox ::placeholder {
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.inputBox input, .inputBox textarea {
+    padding: 10px;
+    font-size: 1.1em;
+    outline: none;
+    border: 1px solid #333;
+}
+
+.inputBox textarea {
+    resize: none;
+    min-height: 220px;
+    margin-bottom: 10px;
+}
+
+.info {
+    background: #014872;
+}
+
+.info h3 {
+    color: #fff;
+}
+
+.info .infobox div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info .infobox div span {
+    min-width: 45px;
+    height: 45px;
+    color: #fff;
+    background: #84bdff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.info .infobox div p, .info .infobox div a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.map {
+    padding: 0;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width:991px) {
+    body {
+        background: #014872;
+    }
+}
